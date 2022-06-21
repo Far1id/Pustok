@@ -1,0 +1,27 @@
+﻿@model MemberLoginViewModel
+
+<form asp-action="login" method="post">
+    <div class="login-form">
+        <h4 class="login-title">Returning Customer</h4>
+        <p><span class="font-weight-bold">I am a returning customer</span></p>
+        <div class="row">
+            <div class="col-md-12 col-12 mb--15">
+                <label asp-for="LoginUserName">Enter your email address here...</label>
+                <input asp-for="LoginUserName" class="mb-0 form-control" type="email" id="email1"
+                       placeholder="Enter you UserName here...">
+                <span class="text-danger" asp-validation-for="LoginUserName"></span>
+            </div>
+            <div class="col-12 mb--20">
+                <label asp-for="LoginPassword">Password</label>
+                <input asp-for="LoginPassword" class="mb-0 form-control" type="password" id="login-password" placeholder="Enter your password">
+                <span class="text-danger" asp-validation-for="LoginPassword"></span>
+                <a asp-action="forgot"> Forgot Password</a>
+
+            </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="col-md-12">
+                <a href="#" class="btn btn-outlined">Login</a>
+            </div>
+        </div>
+    </div>
+</form>

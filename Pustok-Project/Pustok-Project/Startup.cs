@@ -31,6 +31,8 @@ namespace Pustok_Project
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
 
+
+
             services.AddIdentity<AppUser, IdentityRole>(opt =>
             {
                 opt.Password.RequireDigit = true;
@@ -59,6 +61,7 @@ namespace Pustok_Project
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
